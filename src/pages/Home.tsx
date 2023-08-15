@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import mobileBackground from '../../assets/home/background-home-mobile.jpg';
 import Navbar from '../components/Navbar';
 
+
 export default function Home() {
   return (
     <div className='bg-cover' style={{backgroundImage:`url(${mobileBackground})`,height:'844px'}}>
@@ -24,6 +25,7 @@ export default function Home() {
                 </button>
             </Link>
         </div>
+       
         </div>
     </div>
   )
