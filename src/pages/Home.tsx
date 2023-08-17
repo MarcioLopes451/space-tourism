@@ -1,8 +1,6 @@
-
 import { Link } from 'react-router-dom';
 import mobileBackground from '../../assets/home/background-home-mobile.jpg';
 import Navbar from '../components/Navbar';
-
 
 export default function Home() {
   return (

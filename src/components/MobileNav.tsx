@@ -16,7 +16,7 @@ export default function MobileNav({onClose, isOpen}: Nav) {
             <Link to='/' className='text-white font-barlowCondensed font-thin tracking-wide mx-8 flex gap-3'>
                 <span className='font-bold'>00</span> HOME
             </Link>
-            <Link to='/' className='text-white font-barlowCondensed font-thin tracking-wide mx-8 flex gap-3'>
+            <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide mx-8 flex gap-3'>
                 <span className='font-bold'>01</span> DESTINATION
             </Link>
             <Link to='/' className='text-white font-barlowCondensed font-thin tracking-wide mx-8 flex gap-3'>
