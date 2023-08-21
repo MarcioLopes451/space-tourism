@@ -5,6 +5,12 @@ type Destination = {
     distance: string
     travel: string
 }
+
+type Crew = {
+    name: string
+    role:string
+    bio: string
+}
 export default function DestinationLayout({name,description,distance,travel}: Destination) {
   return (
     <div className=" mt-7">
@@ -24,3 +30,17 @@ export default function DestinationLayout({name,description,distance,travel}: De
     </div>
   )
 }
+
+export function CrewLayout({name,role,bio}: Crew){
+    return (
+    <div className="mt-7">
+        <div className="text-center">
+            <p className=" font-bellefair text-white opacity-50 text-2xl font-thin uppercase">{role}</p>
+            <p className=" font-bellefair uppercase text-white text-3xl font-thin mt-3">{name}</p>
+            <p className=" font-barlowCondensed font-thin text-periwinkle text-base px-2 mt-4">{bio}</p>
+        </div>
+    </div>
+    )
+}
+
+
