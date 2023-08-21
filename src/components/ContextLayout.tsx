@@ -11,6 +11,12 @@ type Crew = {
     role:string
     bio: string
 }
+
+type Technology = {
+    name:string
+    description: string
+}
+
 export default function DestinationLayout({name,description,distance,travel}: Destination) {
   return (
     <div className=" mt-7">
@@ -43,4 +49,14 @@ export function CrewLayout({name,role,bio}: Crew){
     )
 }
 
+export function TechnologyLayout({name,description}: Technology){
+    return (
+        <div className="mt-7">
+            <div className="text-center">
+                <p className="text-white font-bellefair text-3xl font-thin uppercase">{name}</p>
+                <p className=" font-barlowCondensed font-thin text-periwinkle text-base px-2 mt-4">{description}</p>
+            </div>
+        </div>
+    )
+}
 

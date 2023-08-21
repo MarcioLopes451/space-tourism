@@ -22,7 +22,7 @@ export default function MobileNav({onClose, isOpen}: Nav) {
             <Link to='/space-tourism/crew' className='text-white font-barlowCondensed font-thin tracking-wide mx-8 flex gap-3'>
                 <span className='font-bold'>02</span> CREW
             </Link>
-            <Link to='/' className='text-white font-barlowCondensed font-thin tracking-wide mx-8 flex gap-3'>
+            <Link to='/space-tourism/technology' className='text-white font-barlowCondensed font-thin tracking-wide mx-8 flex gap-3'>
                 <span className='font-bold'>03</span> TECHNOLOGY
             </Link>
            </div>
