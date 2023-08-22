@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 
 type Destination = {
     name:string 
@@ -18,8 +19,21 @@ type Technology = {
 }
 
 export default function DestinationLayout({name,description,distance,travel}: Destination) {
-  return (
-    <div className=" mt-7">
+    const [width, setWidth] = useState(window.innerWidth);
+    const breakPoint = 768;
+
+    useEffect(() => {
+        const handleResizeWindow = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResizeWindow);
+        return () => {
+            window.removeEventListener('resize', handleResizeWindow);
+        };
+    }, []);
+
+    function mediaQuery(){
+        if(width < breakPoint) {
+            return (
+                <div className=" mt-7">
         <div className='text-white'>
             <p className="font-bellefair text-6xl text-center font-thin">{name}</p>
             <p className=" text-periwinkle text-center font-barlowCondensed font-thin">{description}</p>
@@ -34,7 +48,32 @@ export default function DestinationLayout({name,description,distance,travel}: De
             </div>
         </div>
     </div>
-  )
+            )
+        } else if( width === breakPoint) {
+            return (
+                <div className="mt-7">
+        <div className='text-white'>
+            <p className="font-bellefair text-6xl text-center font-thin">{name}</p>
+            <p className="text-periwinkle text-center font-barlowCondensed font-thin mt-5 px-20" >{description}</p>
+            <div className=" border-transparent border-t mt-14 mx-6 flex justify-center items-center gap-16">
+            <p className="flex flex-col justify-center items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
+                AVG. DISTANCE 
+                <span className="text-white font-bellefair text-3xl font-thin">{distance}</span>
+            </p>
+            <p className="flex flex-col justify-center items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
+                EST. TRAVEL TIME
+                <span className="text-white font-bellefair text-3xl font-thin">{travel}</span></p>
+            </div>
+        </div>
+    </div>
+            )
+        }
+    }
+    return (
+        <div>
+            {mediaQuery()}
+        </div>
+    )
 }
 
 export function CrewLayout({name,role,bio}: Crew){
