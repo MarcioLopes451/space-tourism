@@ -77,13 +77,43 @@ export default function DestinationLayout({name,description,distance,travel}: De
 }
 
 export function CrewLayout({name,role,bio}: Crew){
+    const [width, setWidth] = useState(window.innerWidth);
+    const breakPoint = 768;
+
+    useEffect(() => {
+        const handleResizeWindow = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResizeWindow);
+        return () => {
+            window.removeEventListener('resize', handleResizeWindow);
+        };
+    }, []);
+
+    function mediaQuery(){
+        if(width < breakPoint) {
+            return (
+                <div className="mt-7">
+                    <div className="text-center">
+                        <p className=" font-bellefair text-white opacity-50 text-2xl font-thin uppercase">{role}</p>
+                        <p className=" font-bellefair uppercase text-white text-3xl font-thin mt-3">{name}</p>
+                        <p className=" font-barlowCondensed font-thin text-periwinkle text-base px-2 mt-4">{bio}</p>
+                    </div>
+                </div>
+                )
+        } else if( width === breakPoint) {
+            return (
+                <div className="mt-7">
+                    <div className="text-center">
+                        <p className=" font-bellefair text-white opacity-50 text-2xl font-thin uppercase">{role}</p>
+                        <p className=" font-bellefair uppercase text-white text-3xl font-thin mt-3">{name}</p>
+                        <p className=" font-barlowCondensed font-thin text-periwinkle text-base px-2 mt-4">{bio}</p>
+                    </div>
+                </div>
+                )
+        }
+    }
     return (
-    <div className="mt-7">
-        <div className="text-center">
-            <p className=" font-bellefair text-white opacity-50 text-2xl font-thin uppercase">{role}</p>
-            <p className=" font-bellefair uppercase text-white text-3xl font-thin mt-3">{name}</p>
-            <p className=" font-barlowCondensed font-thin text-periwinkle text-base px-2 mt-4">{bio}</p>
-        </div>
+    <div>
+        {mediaQuery()}
     </div>
     )
 }
