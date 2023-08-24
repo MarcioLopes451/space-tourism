@@ -8,6 +8,7 @@ import titan from '../../assets/destination/image-titan.webp';
 import { destination } from '../data';
 import DestinationLayout from '../components/ContextLayout';
 import Navbar from '../components/Navbar';
+import desktopBackground from '../../assets/destination/background-destination-desktop.jpg'
 
 
 export default function Destination() {
@@ -27,25 +28,25 @@ export default function Destination() {
         if(image === 'moon'){
             return (
                 <div className='flex justify-center items-center mt-8'>
-                    <img src={moon} className='w-48 h-48 md:w-80 h-80'/>
+                    <img src={moon} className='w-48 h-48 md:w-80 md:h-80 xl:h-full xl:w-full'/>
                 </div>
             )
         } else if(image === 'mars') {
             return (
                 <div className='flex justify-center items-center mt-8'>
-                    <img src={mars} className='w-48 h-48 md:w-80 h-80'/>
+                    <img src={mars} className='w-48 h-48 md:w-80 md:h-80 xl:h-full xl:w-full'/>
                 </div>
             )
         } else if(image === 'europa') {
             return (
                 <div className='flex justify-center items-center mt-8'>
-                <img src={europa} className='w-48 h-48 md:w-80 h-80'/>
+                <img src={europa} className='w-48 h-48 md:w-80 md:h-80 xl:h-full xl:w-full'/>
             </div>
             )
         } else if(image === 'titan') {
             return (
                 <div className='flex justify-center items-center mt-8'>
-                <img src={titan} className='w-48 h-48 md:w-80 h-80'/>
+                <img src={titan} className='w-48 h-48 md:w-80 md:h-80 xl:h-full xl:w-full'/>
             </div>
             )
         }
@@ -130,6 +131,27 @@ export default function Destination() {
                     {changeContent()}
                 </div>
               )
+        } else {
+            return (
+                <div style={{backgroundImage:`url(${desktopBackground})`,height:'1110px'}} className='bg-cover'>
+                    <Navbar />
+                    
+                    <div className='text-white font-barlowCondensed font-thin flex justify-around mt-56'>
+                        <div>
+                        <h3 className='flex justify-center gap-4 md:justify-start ml-5'><span className='opacity-20 font-bold'>01</span> PICK YOUR DESTINATION</h3>
+                        {changeImage()}
+                        </div>
+                        <div className='flex mt-5 justify-start flex-col'>
+                            <div className='flex justify-start items-center gap-5 text-periwinkle'>
+                            <p onClick={() => setImage('moon')}>{destination.moon.name}</p>
+                            <p onClick={() => setImage('mars')}>{destination.mars.name}</p>
+                            <p onClick={() => setImage('europa')}>{destination.europa.name}</p>
+                            <p onClick={() => setImage('titan')}>{destination.titan.name}</p>
+                            </div>
+                            {changeContent()}
+                        </div>
+                    </div>
+                </div>)
         }
     }
   return (

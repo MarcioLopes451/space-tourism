@@ -67,6 +67,23 @@ export default function DestinationLayout({name,description,distance,travel}: De
         </div>
     </div>
             )
+        } else {
+            return (
+            <div className="mt-10" style={{width:'600px'}}>
+        <div className='flex flex-col'>
+            <p className="font-bellefair text-6xl font-thin">{name}</p>
+            <p className="text-periwinkle font-barlowCondensed font-thin mt-5" >{description}</p>
+            <div className=" border-transparent border-t mt-14 mx-6 flex justify-center items-center gap-16">
+            <p className="flex flex-col justify-start items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
+                AVG. DISTANCE 
+                <span className="text-white font-bellefair text-3xl font-thin">{distance}</span>
+            </p>
+            <p className="flex flex-col justify-center items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
+                EST. TRAVEL TIME
+                <span className="text-white font-bellefair text-3xl font-thin">{travel}</span></p>
+            </div>
+        </div>
+    </div>)
         }
     }
     return (

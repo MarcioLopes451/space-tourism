@@ -9,6 +9,7 @@ import { TechnologyLayout } from '../components/ContextLayout';
 import tabletBackground from '../../assets/technology/background-technology-tablet.jpg'
 
 
+
 export default function Technology() {
     const [image, setImage] = useState('launch');
     const [width, setWidth] = useState(window.innerWidth);

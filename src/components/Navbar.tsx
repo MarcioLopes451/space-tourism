@@ -57,6 +57,29 @@ export default function Navbar() {
               <MobileNav isOpen={state} onClose={handleClick}/>
           </div>
         )
+      } else if(width > breakPoint) {
+        return (
+          <div className='w-full'>
+              <div className='flex justify-between items-center'>
+                  <img src={Logo} className='ml-6'/>
+                  <div className='flex gap-11 bg-transparent h-24 backdrop-blur-2xl items-center px-12 text-sm'>
+                 <Link to='/space-tourism/' className='text-white font-barlowCondensed font-thin tracking-wide'>
+                 HOME
+            </Link>
+            <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide'>
+               DESTINATION
+            </Link>
+            <Link to='/space-tourism/crew' className='text-white font-barlowCondensed font-thin tracking-wide'>
+                CREW
+            </Link>
+            <Link to='/space-tourism/technology' className='text-white font-barlowCondensed font-thin tracking-wide'>
+                 TECHNOLOGY
+            </Link>
+                 </div>
+              </div>
+              <MobileNav isOpen={state} onClose={handleClick}/>
+          </div>
+        )
       }
     }
   return (
