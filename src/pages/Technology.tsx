@@ -6,7 +6,11 @@ import spacePort from '../../assets/technology/image-spaceport-landscape.jpg';
 import spaceCapsule from '../../assets/technology/image-space-capsule-landscape.jpg';
 import { technology } from '../data';
 import { TechnologyLayout } from '../components/ContextLayout';
-import tabletBackground from '../../assets/technology/background-technology-tablet.jpg'
+import tabletBackground from '../../assets/technology/background-technology-tablet.jpg';
+import desktopBackground from '../../assets/technology/background-technology-desktop.jpg';
+import launchP from '../../assets/technology/image-launch-vehicle-portrait.jpg';
+import spacePortP from '../../assets/technology/image-spaceport-portrait.jpg';
+import spaceCapsuleP from '../../assets/technology/image-space-capsule-portrait.jpg'
 
 
 
@@ -27,19 +31,22 @@ export default function Technology() {
         if(image === 'launch'){
             return (
                 <div className='flex justify-center items-center mt-8'>
-                    <img src={launch} className='w-full h-56 md:h-72'/>
+                     {width < breakPoint ? <img src={launch} className='w-full h-56 md:h-72'/> : 
+                     width === breakPoint? <img src={launch}/> : <img src={launchP}/> }
                 </div>
             )
         } else if(image === 'spacePort') {
             return (
                 <div className='flex justify-center items-center mt-8'>
-                    <img src={spacePort} className='w-full h-56 md:h-72'/>
+                    {width < breakPoint ? <img src={spacePort} className='w-full h-56 md:h-72'/> : 
+                    width === breakPoint ? <img src={spacePort}/> : <img src={spacePortP}/> }
                 </div>
             )
         } else if(image === 'spaceCapsule') {
             return (
                 <div className='flex justify-center items-center mt-8'>
-                <img src={spaceCapsule} className='w-full h-56 md:h-72'/>
+                {width < breakPoint ? <img src={spaceCapsule} className='w-full h-56 md:h-72'/> : 
+                 width === breakPoint? <img src={spaceCapsule}/> : <img src={spaceCapsuleP}/> }
             </div>
             )
         } 
@@ -113,6 +120,30 @@ export default function Technology() {
                     <h3 className=' text-periwinkle font-barlowCondensed font-thin text-center mt-6'>THE TERMINOLOGY...</h3>
                     </div>
                     {changeContent()}
+                </div>
+              )
+        } else {
+            return (
+                <div style={{backgroundImage:`url(${desktopBackground})`, height:'1110px'}} className='bg-cover'>
+                    <Navbar />
+                    <h3 className='flex justify-start gap-4 ml-6 text-white'><span className='opacity-20 font-bold'>03</span>SPACE LAUNCH 101</h3>
+                    <div className='text-white mt-9 flex justify-around'>
+                    <div className='flex items-start gap-10'>
+                    <div className='flex justify-center flex-col items-center gap-5 text-richBlack mt-5'>
+                        <button onClick={() => setImage('launch')} 
+                        className=' w-10 h-10 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>1</button>
+                        <button onClick={() => setImage('spacePort')} 
+                        className=' w-10 h-10 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>2</button>
+                        <button onClick={() => setImage('spaceCapsule')} 
+                        className=' w-10 h-10 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>3</button>
+                    </div>
+                    <div>
+                    <h3 className=' text-periwinkle font-barlowCondensed font-thin text-start mt-6'>THE TERMINOLOGY...</h3>
+                    {changeContent()}
+                    </div>
+                    </div>
+                    {changeImage()}
+                    </div>
                 </div>
               )
         }
