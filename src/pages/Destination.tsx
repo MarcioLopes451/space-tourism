@@ -99,7 +99,7 @@ export default function Destination() {
     function changeBackground(){
         if(width < breakPoint) {
             return (
-                <div style={{backgroundImage:`url(${background})`}} className='bg-cover'>
+                <div style={{backgroundImage:`url(${background})`, height:'850px'}} className='bg-cover'>
                     <Navbar />
                     <div className='text-white font-barlowCondensed font-thin text-center'>
                         <h3 className='flex justify-center gap-4'><span className='opacity-20 font-bold'>01</span> PICK YOUR DESTINATION</h3>

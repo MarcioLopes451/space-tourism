@@ -89,7 +89,7 @@ export default function Home() {
         }
     }
   return (
-    <div >
+    <div>
         {changeBackground()}
     </div>
   )

@@ -100,7 +100,7 @@ export default function Crew() {
     function changeBackground(){
         if(width < breakPoint) {
             return (
-                <div style={{backgroundImage:`url(${background})`,height:'844px'}} className='bg-cover'>
+                <div style={{backgroundImage:`url(${background})`,height:'710px'}} className='bg-cover'>
                 <Navbar />
                 <div className='text-white font-barlowCondensed font-thin text-center'>
                     <h3 className='flex justify-center gap-4'><span className='opacity-20 font-bold'>02</span> MEET YOUR CREW</h3>
@@ -159,7 +159,7 @@ export default function Crew() {
     }
 
   return (
-    <div>
+    <div style={{height:'710px'}}>
         {changeBackground()}
     </div>
   )
