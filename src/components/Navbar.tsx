@@ -40,17 +40,17 @@ export default function Navbar() {
               <div className='flex justify-between items-center'>
                   <img src={Logo} className='ml-6'/>
                   <div className='flex gap-11 bg-transparent h-24 backdrop-blur-2xl items-center px-12 text-sm'>
-                 <Link to='/space-tourism/' className='text-white font-barlowCondensed font-thin tracking-wide'>
-                 HOME
+                  <Link to='/space-tourism/' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+                <span className='font-bold'>00</span> HOME
             </Link>
-            <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide'>
-               DESTINATION
+            <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+                <span className='font-bold'>01</span> DESTINATION
             </Link>
-            <Link to='/space-tourism/crew' className='text-white font-barlowCondensed font-thin tracking-wide'>
-                CREW
+            <Link to='/space-tourism/crew' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+                <span className='font-bold'>02</span> CREW
             </Link>
-            <Link to='/space-tourism/technology' className='text-white font-barlowCondensed font-thin tracking-wide'>
-                 TECHNOLOGY
+            <Link to='/space-tourism/technology' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+                <span className='font-bold'>03</span> TECHNOLOGY
             </Link>
                  </div>
               </div>
@@ -63,17 +63,17 @@ export default function Navbar() {
               <div className='flex justify-between items-center'>
                   <img src={Logo} className='ml-6'/>
                   <div className='flex gap-11 bg-transparent h-24 backdrop-blur-2xl items-center px-12 text-sm'>
-                 <Link to='/space-tourism/' className='text-white font-barlowCondensed font-thin tracking-wide'>
-                 HOME
+                  <Link to='/space-tourism/' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+                <span className='font-bold'>00</span> HOME
             </Link>
-            <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide'>
-               DESTINATION
+            <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+                <span className='font-bold'>01</span> DESTINATION
             </Link>
-            <Link to='/space-tourism/crew' className='text-white font-barlowCondensed font-thin tracking-wide'>
-                CREW
+            <Link to='/space-tourism/crew' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+                <span className='font-bold'>02</span> CREW
             </Link>
-            <Link to='/space-tourism/technology' className='text-white font-barlowCondensed font-thin tracking-wide'>
-                 TECHNOLOGY
+            <Link to='/space-tourism/technology' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+                <span className='font-bold'>03</span> TECHNOLOGY
             </Link>
                  </div>
               </div>

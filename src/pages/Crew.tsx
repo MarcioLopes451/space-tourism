@@ -31,13 +31,13 @@ export default function Crew() {
         if(image === 'douglas'){
             return (
                 <div className='flex justify-center items-center mt-8'>
-                    <img src={douglas} className='w-44 h-56 md:h-1/4 md:w-80 md:mt-12 xl:w-full'/>
+                    <img src={douglas} className='w-44 h-56 md:h-1/4 md:w-80 xl:w-11/12'/>
                 </div>
             )
         } else if(image === 'mark') {
             return (
                 <div className='flex justify-center items-center mt-8 md:mt-14'>
-                    <img src={mark} className='w-40 h-56 md:h-1/5 md:w-64 md:mt-16 xl:w-full'/>
+                    <img src={mark} className='w-40 h-56 md:h-1/5 md:w-64 xl:w-full'/>
                 </div>
             )
         } else if(image === 'victor') {
@@ -102,7 +102,7 @@ export default function Crew() {
     function changeBackground(){
         if(width < breakPoint) {
             return (
-                <div style={{backgroundImage:`url(${background})`,height:'844px'}} className='bg-cover'>
+                <div style={{backgroundImage:`url(${background})`,height:'1100px'}} className='bg-cover'>
                 <Navbar />
                 <div className='text-white font-barlowCondensed font-thin text-center mt-5'>
                     <h3 className='flex justify-center gap-4'><span className='opacity-20 font-bold'>02</span> MEET YOUR CREW</h3>
@@ -140,21 +140,22 @@ export default function Crew() {
             )
         } else {
             return (
-                <div style={{backgroundImage:`url(${desktopBackground})`}} className='bg-cover'>
+                <div style={{backgroundImage:`url(${desktopBackground})`, height:'1100px'}} className='bg-cover'>
                 <Navbar />
-                <h3 className='flex justify-start gap-4 ml-5 text-white'><span className='opacity-20 font-bold'>02</span> MEET YOUR CREW</h3>
-                <div className='text-white font-barlowCondensed font-thin text-center flex justify-around items-center mt-9'>
+                <h3 className='flex justify-start gap-4 ml-28 mt-32 text-white font-barlowCondensed font-thin text-xl tracking-wider'>
+                    <span className='opacity-20 font-bold'>02</span> MEET YOUR CREW</h3>
+                <div className='text-white font-barlowCondensed font-thin text-center flex justify-around items-center -mt-24'>
                     <div>
                     {changeContent()}
-                    <div className='flex justify-center items-center gap-5 text-periwinkle mt-5'>
+                    </div>
+                    {changeImage()}
+                </div>
+                <div className='flex justify-start gap-5 text-periwinkle ml-32 -mt-10'>
                         <p onClick={() => setImage('douglas')}><FontAwesomeIcon icon={faCircle} /></p>
                         <p onClick={() => setImage('mark')}><FontAwesomeIcon icon={faCircle} /></p>
                         <p onClick={() => setImage('victor')}><FontAwesomeIcon icon={faCircle} /></p>
                         <p onClick={() => setImage('anousheh')}><FontAwesomeIcon icon={faCircle} /></p>
                     </div>
-                    </div>
-                    {changeImage()}
-                </div>
             </div>
             )
         }

@@ -18,6 +18,7 @@ export default function Technology() {
     const [image, setImage] = useState('launch');
     const [width, setWidth] = useState(window.innerWidth);
     const breakPoint = 768;
+    const med = 1024;
 
     useEffect(() => {
         const handleResizeWindow = () => setWidth(window.innerWidth);
@@ -32,21 +33,21 @@ export default function Technology() {
             return (
                 <div className='flex justify-center items-center mt-8'>
                      {width < breakPoint ? <img src={launch} className='w-full h-56 md:h-72'/> : 
-                     width === breakPoint? <img src={launch}/> : <img src={launchP}/> }
+                     width >= breakPoint && width < med ? <img src={launch} className='w-full'/> : <img src={launchP} className=' h-full'/> }
                 </div>
             )
         } else if(image === 'spacePort') {
             return (
                 <div className='flex justify-center items-center mt-8'>
                     {width < breakPoint ? <img src={spacePort} className='w-full h-56 md:h-72'/> : 
-                    width === breakPoint ? <img src={spacePort}/> : <img src={spacePortP}/> }
+                    width >= breakPoint && width < med ? <img src={spacePort} className='w-full'/> : <img src={spacePortP}/> }
                 </div>
             )
         } else if(image === 'spaceCapsule') {
             return (
                 <div className='flex justify-center items-center mt-8'>
                 {width < breakPoint ? <img src={spaceCapsule} className='w-full h-56 md:h-72'/> : 
-                 width === breakPoint? <img src={spaceCapsule}/> : <img src={spaceCapsuleP}/> }
+                 width >= breakPoint && width < med ? <img src={spaceCapsule} className='w-full'/> : <img src={spaceCapsuleP}/> }
             </div>
             )
         } 
@@ -84,7 +85,7 @@ export default function Technology() {
     function changeBackground() {
         if(width < breakPoint) {
             return (
-                <div style={{backgroundImage:`url(${background})`,height:'844px'}} className='bg-cover'>
+                <div style={{backgroundImage:`url(${background})`,height:'1100px'}} className='bg-cover'>
                     <Navbar />
                     <div className='text-white'>
                     <h3 className='flex justify-center gap-4'><span className='opacity-20 font-bold'>03</span>SPACE LAUNCH 101</h3>
@@ -102,9 +103,9 @@ export default function Technology() {
                     {changeContent()}
                 </div>
               )
-        } else if(width === breakPoint) {
+        } else if(width >= breakPoint && width < med) {
             return (
-                <div style={{backgroundImage:`url(${tabletBackground})`,height:'844px'}} className='bg-cover'>
+                <div style={{backgroundImage:`url(${tabletBackground})`,height:'1100px'}} className='bg-cover'>
                     <Navbar />
                     <div className='text-white mt-9'>
                     <h3 className='flex justify-start gap-4 ml-6'><span className='opacity-20 font-bold'>03</span>SPACE LAUNCH 101</h3>
@@ -126,19 +127,20 @@ export default function Technology() {
             return (
                 <div style={{backgroundImage:`url(${desktopBackground})`, height:'1110px'}} className='bg-cover'>
                     <Navbar />
-                    <h3 className='flex justify-start gap-4 ml-6 text-white'><span className='opacity-20 font-bold'>03</span>SPACE LAUNCH 101</h3>
-                    <div className='text-white mt-9 flex justify-around'>
-                    <div className='flex items-start gap-10'>
-                    <div className='flex justify-center flex-col items-center gap-5 text-richBlack mt-5'>
+                    <h3 className='flex justify-start gap-4 ml-24 text-white mt-24 text-xl font-thin font-barlowCondensed'>
+                    <span className='opacity-20 font-bold'>03</span>SPACE LAUNCH 101</h3>
+                    <div className='text-white flex justify-around'>
+                    <div className='flex items-center gap-10'>
+                    <div className='flex justify-center flex-col items-center gap-9 text-richBlack mt-5 px-5'>
                         <button onClick={() => setImage('launch')} 
-                        className=' w-10 h-10 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>1</button>
+                        className=' w-20 h-20 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>1</button>
                         <button onClick={() => setImage('spacePort')} 
-                        className=' w-10 h-10 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>2</button>
+                        className=' w-20 h-20 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>2</button>
                         <button onClick={() => setImage('spaceCapsule')} 
-                        className=' w-10 h-10 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>3</button>
+                        className=' w-20 h-20 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>3</button>
                     </div>
                     <div>
-                    <h3 className=' text-periwinkle font-barlowCondensed font-thin text-start mt-6'>THE TERMINOLOGY...</h3>
+                    <h3 className='text-periwinkle font-barlowCondensed font-thin text-start mt-6'>THE TERMINOLOGY...</h3>
                     {changeContent()}
                     </div>
                     </div>

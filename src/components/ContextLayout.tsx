@@ -130,11 +130,11 @@ export function CrewLayout({name,role,bio}: Crew){
                 )
         } else {
             return (
-                <div className="mt-7" style={{width:'400px'}}>
-                    <div className="text-center">
-                        <p className=" font-bellefair text-white opacity-50 text-2xl font-thin uppercase">{role}</p>
-                        <p className=" font-bellefair uppercase text-white text-3xl font-thin mt-3">{name}</p>
-                        <p className=" font-barlowCondensed font-thin text-periwinkle text-base px-2 mt-4">{bio}</p>
+                <div className="mt-7">
+                    <div className="text-start">
+                        <p className="font-bellefair text-white opacity-50 text-2xl font-thin uppercase">{role}</p>
+                        <p className="font-bellefair uppercase text-white text-5xl font-thin mt-3">{name}</p>
+                        <p className="font-barlowCondensed font-thin text-periwinkle text-base mt-4 tracking-wider" style={{width:'400px'}}>{bio}</p>
                     </div>
                 </div>
                 )
@@ -150,6 +150,7 @@ export function CrewLayout({name,role,bio}: Crew){
 export function TechnologyLayout({name,description}: Technology){
     const [width, setWidth] = useState(window.innerWidth);
     const breakPoint = 768;
+    const med = 1024;
 
     useEffect(() => {
         const handleResizeWindow = () => setWidth(window.innerWidth);
@@ -169,7 +170,7 @@ export function TechnologyLayout({name,description}: Technology){
                     </div>
                 </div>
             )
-        } else if(width) {
+        } else if( width >= breakPoint && width < med ) {
             return (
                 <div className="mt-7">
                     <div className="text-center">
@@ -182,8 +183,8 @@ export function TechnologyLayout({name,description}: Technology){
             return (
                 <div className="mt-7">
                     <div className="text-start" style={{width:'470px'}}>
-                        <p className="text-white font-bellefair text-3xl font-thin uppercase">{name}</p>
-                        <p className=" font-barlowCondensed font-thin text-periwinkle text-base px-2 mt-4">{description}</p>
+                        <p className="text-white font-bellefair text-5xl font-thin uppercase">{name}</p>
+                        <p className=" font-barlowCondensed font-thin text-periwinkle text-lg mt-8">{description}</p>
                     </div>
                 </div>
             )

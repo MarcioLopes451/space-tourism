@@ -136,14 +136,14 @@ export default function Destination() {
             return (
                 <div style={{backgroundImage:`url(${desktopBackground})`,height:'1110px'}} className='bg-cover'>
                     <Navbar />
-                    
-                    <div className='text-white font-barlowCondensed font-thin flex justify-around mt-56'>
+                    <h3 className='flex justify-center gap-4 md:justify-start ml-28 text-white text-xl font-barlowCondensed font-thin mt-20'>
+                        <span className='opacity-20 font-bold'>01</span> PICK YOUR DESTINATION</h3>
+                    <div className='text-white font-barlowCondensed font-thin flex justify-around mt-20'>
                         <div>
-                        <h3 className='flex justify-center gap-4 md:justify-start ml-5'><span className='opacity-20 font-bold'>01</span> PICK YOUR DESTINATION</h3>
                         {changeImage()}
                         </div>
                         <div className='flex mt-5 justify-start flex-col'>
-                            <div className='flex justify-start items-center gap-5 text-periwinkle'>
+                            <div className='flex justify-start items-center gap-5 text-periwinkle cursor-pointer'>
                             <p onClick={() => setImage('moon')}>{destination.moon.name}</p>
                             <p onClick={() => setImage('mars')}>{destination.mars.name}</p>
                             <p onClick={() => setImage('europa')}>{destination.europa.name}</p>

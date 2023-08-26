@@ -21,7 +21,7 @@ export default function Home() {
     function changeBackground(){
         if(width < breakPoint) {
             return (
-                <div className='bg-cover' style={{backgroundImage:`url(${mobileBackground})`,height:'844px'}}>
+                <div className='bg-cover' style={{backgroundImage:`url(${mobileBackground})`,height:'1000px'}}>
                      <Navbar />
                      <div className='mt-12 z-10'>
                         <div className='flex justify-center flex-col gap-4 items-center'>
@@ -44,7 +44,7 @@ export default function Home() {
                 </div>
             )
         } else if(width >= breakPoint && width < med) {
-            return <div className='bg-cover' style={{backgroundImage:`url(${tabletBackground})`,height:'1000px'}}>
+            return <div className='bg-cover' style={{backgroundImage:`url(${tabletBackground})`,height:'1100px'}}>
                 <Navbar />
                      <div className=' mt-28 z-10'>
                         <div className='flex justify-center flex-col gap-4 items-center'>
@@ -66,13 +66,13 @@ export default function Home() {
                         </div>
                 </div>
         } else  {
-            return <div className='bg-cover' style={{backgroundImage:`url(${desktopBackground})`,height:'1110px'}}>
+            return <div className='bg-cover' style={{backgroundImage:`url(${desktopBackground})`,height:'1100px'}}>
                 <Navbar />
                      <div className='mt-64 z-10 flex justify-around items-center'>
                         <div className='flex flex-col'>
-                            <p className=' text-periwinkle font-barlowCondensed font-thin tracking-wide'>SO, YOU WANT TO TRAVEL TO</p>
-                            <h2 className='text-white font-bellefair tracking-widest text-8xl'>SPACE</h2>
-                            <p className=' text-periwinkle font-barlowCondensed text-center font-thin' style={{width:'327px'}}>
+                            <p className='text-periwinkle font-barlowCondensed font-thin tracking-widest'>SO, YOU WANT TO TRAVEL TO</p>
+                            <h2 className='text-white font-bellefair tracking-widest text-8xl mt-6'>SPACE</h2>
+                            <p className='text-periwinkle font-barlowCondensed text-start font-thin mt-10' style={{width:'327px'}}>
                                 Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not 
                                 hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this 
                                 world experience!
