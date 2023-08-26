@@ -21,6 +21,7 @@ type Technology = {
 export default function DestinationLayout({name,description,distance,travel}: Destination) {
     const [width, setWidth] = useState(window.innerWidth);
     const breakPoint = 768;
+    const med = 1024;
 
     useEffect(() => {
         const handleResizeWindow = () => setWidth(window.innerWidth);
@@ -33,7 +34,7 @@ export default function DestinationLayout({name,description,distance,travel}: De
     function mediaQuery(){
         if(width < breakPoint) {
             return (
-                <div className=" mt-7">
+                <div className="mt-7">
         <div className='text-white'>
             <p className="font-bellefair text-6xl text-center font-thin">{name}</p>
             <p className=" text-periwinkle text-center font-barlowCondensed font-thin px-3 mt-3">{description}</p>
@@ -49,7 +50,7 @@ export default function DestinationLayout({name,description,distance,travel}: De
         </div>
     </div>
             )
-        } else if( width === breakPoint) {
+        } else if( width >= breakPoint && width < med ) {
             return (
                 <div className="mt-7">
         <div className='text-white'>

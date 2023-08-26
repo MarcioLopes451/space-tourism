@@ -44,7 +44,7 @@ export default function Home() {
                 </div>
             )
         } else if(width >= breakPoint && width < med) {
-            return <div className='bg-cover' style={{backgroundImage:`url(${tabletBackground})`,height:'844px'}}>
+            return <div className='bg-cover' style={{backgroundImage:`url(${tabletBackground})`,height:'1000px'}}>
                 <Navbar />
                      <div className=' mt-28 z-10'>
                         <div className='flex justify-center flex-col gap-4 items-center'>

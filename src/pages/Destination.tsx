@@ -15,6 +15,7 @@ export default function Destination() {
     const [image, setImage] = useState('moon');
     const [width, setWidth] = useState(window.innerWidth);
     const breakPoint = 768;
+    const med = 1024;
 
     useEffect(() => {
         const handleResizeWindow = () => setWidth(window.innerWidth);
@@ -99,7 +100,7 @@ export default function Destination() {
     function changeBackground(){
         if(width < breakPoint) {
             return (
-                <div style={{backgroundImage:`url(${background})`, height:'850px'}} className='bg-cover'>
+                <div style={{backgroundImage:`url(${background})`, height:'1000px'}} className='bg-cover'>
                     <Navbar />
                     <div className='text-white font-barlowCondensed font-thin text-center'>
                         <h3 className='flex justify-center gap-4'><span className='opacity-20 font-bold'>01</span> PICK YOUR DESTINATION</h3>
@@ -114,9 +115,9 @@ export default function Destination() {
                     {changeContent()}
                 </div>
               )
-        } else if(width === breakPoint) {
+        } else if(width >= breakPoint && width < med) {
             return (
-                <div style={{backgroundImage:`url(${tabletBackground})`}} className='bg-cover'>
+                <div style={{backgroundImage:`url(${tabletBackground})`,height:'1000px'}} className='bg-cover'>
                     <Navbar />
                     <div className='text-white font-barlowCondensed font-thin text-center'>
                         <h3 className='flex justify-center gap-4 md:justify-start mt-10 ml-5'><span className='opacity-20 font-bold'>01</span> PICK YOUR DESTINATION</h3>
