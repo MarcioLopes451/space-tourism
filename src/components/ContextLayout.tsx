@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { motion } from 'framer-motion';
+
+// types for contexts 
 
 type Destination = {
     name:string 
@@ -16,6 +19,35 @@ type Crew = {
 type Technology = {
     name:string
     description: string
+}
+// motion animations
+
+const SlideRight = {
+    hidden: {
+        x:'100px',
+        opacity: 0
+    },
+    visible:{
+        x:'0vh',
+        opacity:1,
+        transition:{
+            duration:0.5
+        }
+    }
+}
+
+const slideUp = {
+    hidden: {
+        y:'100px',
+        opacity: 0
+    },
+    visible:{
+        y:'0vh',
+        opacity:1,
+        transition:{
+            duration:0.5
+        }
+    }
 }
 
 export default function DestinationLayout({name,description,distance,travel}: Destination) {
@@ -35,7 +67,11 @@ export default function DestinationLayout({name,description,distance,travel}: De
         if(width < breakPoint) {
             return (
                 <div className="mt-7">
-        <div className='text-white'>
+        <motion.div
+        variants={SlideRight}
+        initial='hidden'
+        animate='visible'
+        className='text-white'>
             <p className="font-bellefair text-6xl text-center font-thin">{name}</p>
             <p className=" text-periwinkle text-center font-barlowCondensed font-thin px-3 mt-3">{description}</p>
             <div className=" border-charcoal border-t mt-2 mx-6">
@@ -47,25 +83,29 @@ export default function DestinationLayout({name,description,distance,travel}: De
                 EST. TRAVEL TIME
                 <span className="text-white font-bellefair text-3xl font-thin">{travel}</span></p>
             </div>
-        </div>
+        </motion.div>
     </div>
             )
         } else if( width >= breakPoint && width < med ) {
             return (
                 <div className="mt-7">
-        <div className='text-white'>
+        <motion.div
+        variants={SlideRight}
+        initial='hidden'
+        animate='visible'
+        className='text-white'>
             <p className="font-bellefair text-6xl text-center font-thin">{name}</p>
             <p className="text-periwinkle text-center font-barlowCondensed font-thin mt-5 px-20" >{description}</p>
             <div className=" border-transparent border-t mt-14 mx-6 flex justify-center items-center gap-16">
-            <p className="flex flex-col justify-center items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
+            <p className="flex flex-col  uppercase justify-center items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
                 AVG. DISTANCE 
                 <span className="text-white font-bellefair text-3xl font-thin">{distance}</span>
             </p>
-            <p className="flex flex-col justify-center items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
+            <p className="flex flex-col justify-center uppercase items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
                 EST. TRAVEL TIME
                 <span className="text-white font-bellefair text-3xl font-thin">{travel}</span></p>
             </div>
-        </div>
+        </motion.div>
     </div>
             )
         } else {
@@ -75,11 +115,11 @@ export default function DestinationLayout({name,description,distance,travel}: De
             <p className="font-bellefair text-6xl font-thin">{name}</p>
             <p className="text-periwinkle font-barlowCondensed font-thin mt-5" >{description}</p>
             <div className=" border-transparent border-t mt-14 mx-6 flex justify-center items-center gap-16">
-            <p className="flex flex-col justify-start items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
+            <p className="flex flex-col justify-start uppercase items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
                 AVG. DISTANCE 
                 <span className="text-white font-bellefair text-3xl font-thin">{distance}</span>
             </p>
-            <p className="flex flex-col justify-center items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
+            <p className="flex flex-col justify-center uppercase items-center text-periwinkle font-barlowCondensed font-thin text-sm tracking-widest mt-8">
                 EST. TRAVEL TIME
                 <span className="text-white font-bellefair text-3xl font-thin">{travel}</span></p>
             </div>
@@ -111,11 +151,15 @@ export function CrewLayout({name,role,bio}: Crew){
         if(width < breakPoint) {
             return (
                 <div className="mt-7">
-                    <div className="text-center">
+                    <motion.div
+                    variants={slideUp}
+                    initial='hidden'
+                    animate='visible'
+                    className="text-center">
                         <p className="font-bellefair text-white opacity-50 text-xl font-thin uppercase">{role}</p>
                         <p className="font-bellefair uppercase text-white text-2xl font-thin mt-3">{name}</p>
                         <p className="font-barlowCondensed font-thin text-periwinkle text-base px-6 mt-6">{bio}</p>
-                    </div>
+                    </motion.div>
                 </div>
                 )
         } else if( width >= breakPoint && width < med ) {

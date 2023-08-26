@@ -11,6 +11,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import tabletBackground from '../../assets/crew/background-crew-tablet.jpg';
 import desktopBackground from '../../assets/crew/background-crew-desktop.jpg';
+import { motion } from 'framer-motion';
+
+const slideIn = {
+    hidden: {
+        y:'-100px',
+        opacity: 0
+    },
+    visible:{
+        y:'0vh',
+        opacity:1,
+        transition:{
+            duration:0.5
+        }
+    }
+}
+
+const slideUp = {
+    hidden: {
+        y:'100px',
+        opacity: 0
+    },
+    visible:{
+        y:'0vh',
+        opacity:1,
+        transition:{
+            duration:0.5
+        }
+    }
+}
 
 export default function Crew() {
     const [image, setImage] = useState('douglas')
@@ -104,7 +133,11 @@ export default function Crew() {
             return (
                 <div style={{backgroundImage:`url(${background})`,height:'1100px'}} className='bg-cover'>
                 <Navbar />
-                <div className='text-white font-barlowCondensed font-thin text-center mt-5'>
+                <motion.div
+                variants={slideIn}
+                initial='hidden'
+                animate='visible' 
+                 className='text-white font-barlowCondensed font-thin text-center mt-5'>
                     <h3 className='flex justify-center gap-4'><span className='opacity-20 font-bold'>02</span> MEET YOUR CREW</h3>
                     <div className='border-charcoal border-b mt-2 mx-4'>
                     {changeImage()}
@@ -115,7 +148,7 @@ export default function Crew() {
                         <p onClick={() => setImage('victor')}><FontAwesomeIcon icon={faCircle} /></p>
                         <p onClick={() => setImage('anousheh')}><FontAwesomeIcon icon={faCircle} /></p>
                     </div>
-                </div>
+                </motion.div>
                 {changeContent()}
             </div>
             )
@@ -123,7 +156,11 @@ export default function Crew() {
             return (
                 <div style={{backgroundImage:`url(${tabletBackground})`,height:'1100px'}} className='bg-cover'>
                 <Navbar />
-                <div className='text-white font-barlowCondensed font-thin text-center mt-9'>
+                <motion.div 
+                variants={slideIn}
+                initial='hidden'
+                animate='visible' 
+                className='text-white font-barlowCondensed font-thin text-center mt-9'>
                     <h3 className='flex justify-start gap-4 ml-5'><span className='opacity-20 font-bold'>02</span> MEET YOUR CREW</h3>
                     <div className=' mt-2 mx-4'>
                     {changeContent()}
@@ -134,8 +171,12 @@ export default function Crew() {
                         <p onClick={() => setImage('victor')}><FontAwesomeIcon icon={faCircle} /></p>
                         <p onClick={() => setImage('anousheh')}><FontAwesomeIcon icon={faCircle} /></p>
                     </div>
-                </div>
-                {changeImage()}
+                </motion.div>
+                <motion.div variants={slideUp}
+                initial='hidden'
+                animate='visible'>
+                {changeImage()} 
+                </motion.div>
             </div>
             )
         } else {
@@ -145,10 +186,16 @@ export default function Crew() {
                 <h3 className='flex justify-start gap-4 ml-28 mt-32 text-white font-barlowCondensed font-thin text-xl tracking-wider'>
                     <span className='opacity-20 font-bold'>02</span> MEET YOUR CREW</h3>
                 <div className='text-white font-barlowCondensed font-thin text-center flex justify-around items-center -mt-24'>
-                    <div>
+                    <motion.div variants={slideIn}
+                initial='hidden'
+                animate='visible'>
                     {changeContent()}
-                    </div>
+                    </motion.div>
+                    <motion.div variants={slideUp}
+                initial='hidden'
+                animate='visible'>
                     {changeImage()}
+                    </motion.div>
                 </div>
                 <div className='flex justify-start gap-5 text-periwinkle ml-32 -mt-10'>
                         <p onClick={() => setImage('douglas')}><FontAwesomeIcon icon={faCircle} /></p>

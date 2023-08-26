@@ -8,8 +8,22 @@ import titan from '../../assets/destination/image-titan.webp';
 import { destination } from '../data';
 import DestinationLayout from '../components/ContextLayout';
 import Navbar from '../components/Navbar';
-import desktopBackground from '../../assets/destination/background-destination-desktop.jpg'
+import desktopBackground from '../../assets/destination/background-destination-desktop.jpg';
+import { motion } from 'framer-motion';
 
+const slideIn = {
+    hidden: {
+        x:'-100px',
+        opacity: 0
+    },
+    visible:{
+        x:'0vh',
+        opacity:1,
+        transition:{
+            duration:0.5
+        }
+    }
+}
 
 export default function Destination() {
     const [image, setImage] = useState('moon');
@@ -102,7 +116,11 @@ export default function Destination() {
             return (
                 <div style={{backgroundImage:`url(${background})`, height:'1000px'}} className='bg-cover'>
                     <Navbar />
-                    <div className='text-white font-barlowCondensed font-thin text-center'>
+                    <motion.div
+                    variants={slideIn}
+                    initial='hidden'
+                    animate='visible' 
+                    className='text-white font-barlowCondensed font-thin text-center'>
                         <h3 className='flex justify-center gap-4'><span className='opacity-20 font-bold'>01</span> PICK YOUR DESTINATION</h3>
                         {changeImage()}
                         <div className='flex justify-center items-center gap-5 text-periwinkle mt-5'>
@@ -111,7 +129,7 @@ export default function Destination() {
                             <p onClick={() => setImage('europa')}>{destination.europa.name}</p>
                             <p onClick={() => setImage('titan')}>{destination.titan.name}</p>
                         </div>
-                    </div>
+                    </motion.div>
                     {changeContent()}
                 </div>
               )
@@ -119,7 +137,10 @@ export default function Destination() {
             return (
                 <div style={{backgroundImage:`url(${tabletBackground})`,height:'1100px'}} className='bg-cover'>
                     <Navbar />
-                    <div className='text-white font-barlowCondensed font-thin text-center'>
+                    <motion.div 
+                    variants={slideIn}
+                    initial='hidden'
+                    animate='visible' className='text-white font-barlowCondensed font-thin text-center'>
                         <h3 className='flex justify-center gap-4 md:justify-start mt-10 ml-5'><span className='opacity-20 font-bold'>01</span> PICK YOUR DESTINATION</h3>
                         {changeImage()}
                         <div className='flex justify-center items-center gap-5 text-periwinkle mt-5'>
@@ -128,7 +149,7 @@ export default function Destination() {
                             <p onClick={() => setImage('europa')}>{destination.europa.name}</p>
                             <p onClick={() => setImage('titan')}>{destination.titan.name}</p>
                         </div>
-                    </div>
+                    </motion.div>
                     {changeContent()}
                 </div>
               )
@@ -138,7 +159,11 @@ export default function Destination() {
                     <Navbar />
                     <h3 className='flex justify-center gap-4 md:justify-start ml-28 text-white text-xl font-barlowCondensed font-thin mt-20'>
                         <span className='opacity-20 font-bold'>01</span> PICK YOUR DESTINATION</h3>
-                    <div className='text-white font-barlowCondensed font-thin flex justify-around mt-20'>
+                    <motion.div
+                    variants={slideIn}
+                    initial='hidden'
+                    animate='visible' 
+                    className='text-white font-barlowCondensed font-thin flex justify-around mt-20'>
                         <div>
                         {changeImage()}
                         </div>
@@ -151,7 +176,7 @@ export default function Destination() {
                             </div>
                             {changeContent()}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>)
         }
     }
