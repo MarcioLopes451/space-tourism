@@ -112,7 +112,7 @@ export function CrewLayout({name,role,bio}: Crew){
                     <div className="text-center">
                         <p className="font-bellefair text-white opacity-50 text-xl font-thin uppercase">{role}</p>
                         <p className="font-bellefair uppercase text-white text-2xl font-thin mt-3">{name}</p>
-                        <p className="font-barlowCondensed font-thin text-periwinkle text-base px-2 mt-4">{bio}</p>
+                        <p className="font-barlowCondensed font-thin text-periwinkle text-base px-6 mt-6">{bio}</p>
                     </div>
                 </div>
                 )
@@ -160,10 +160,10 @@ export function TechnologyLayout({name,description}: Technology){
     function mediaQuery(){
         if(width < breakPoint) {
             return (
-                <div className="mt-7">
+                <div className="mt-2">
                     <div className="text-center">
                         <p className="text-white font-bellefair text-3xl font-thin uppercase">{name}</p>
-                        <p className=" font-barlowCondensed font-thin text-periwinkle text-base px-2 mt-4">{description}</p>
+                        <p className=" font-barlowCondensed font-thin text-periwinkle text-base px-2 mt-8">{description}</p>
                     </div>
                 </div>
             )

@@ -9,7 +9,7 @@ type Nav = {
 export default function MobileNav({onClose, isOpen}: Nav) {
 
   return isOpen ? (
-    <div className='absolute top-0 left-36 bg-transparent w-64 backdrop-blur-2xl' style={{height:'844px'}}>
+    <div className='absolute top-0 left-36 bg-transparent w-64 backdrop-blur-2xl z-50' style={{height:'844px'}}>
         <div>
             <img src={Close} className='absolute top-8 left-48' onClick={onClose}/>
            <div className='flex flex-col mt-36 gap-9'>

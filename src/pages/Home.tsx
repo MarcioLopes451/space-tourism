@@ -8,6 +8,7 @@ import desktopBackground from '../../assets/home/background-home-desktop.jpg'
 export default function Home() {
     const [width, setWidth] = useState(window.innerWidth);
     const breakPoint = 768;
+    const med = 1024;
 
     useEffect(() => {
         const handleResizeWindow = () => setWidth(window.innerWidth);
@@ -42,7 +43,7 @@ export default function Home() {
                         </div>
                 </div>
             )
-        } else if(width === breakPoint) {
+        } else if(width >= breakPoint && width < med) {
             return <div className='bg-cover' style={{backgroundImage:`url(${tabletBackground})`,height:'844px'}}>
                 <Navbar />
                      <div className=' mt-28 z-10'>
@@ -64,7 +65,7 @@ export default function Home() {
                         </div>
                         </div>
                 </div>
-        } else if(width > breakPoint) {
+        } else  {
             return <div className='bg-cover' style={{backgroundImage:`url(${desktopBackground})`,height:'1110px'}}>
                 <Navbar />
                      <div className='mt-64 z-10 flex justify-around items-center'>
