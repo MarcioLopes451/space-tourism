@@ -16,6 +16,8 @@ export default function Crew() {
     const [image, setImage] = useState('douglas')
     const [width, setWidth] = useState(window.innerWidth);
     const breakPoint = 768;
+    const med = 1024;
+
 
     useEffect(() => {
         const handleResizeWindow = () => setWidth(window.innerWidth);
@@ -29,13 +31,13 @@ export default function Crew() {
         if(image === 'douglas'){
             return (
                 <div className='flex justify-center items-center mt-8'>
-                    <img src={douglas} className='w-44 h-56 md:h-1/4 md:w-80 xl:w-full'/>
+                    <img src={douglas} className='w-44 h-56 md:h-1/4 md:w-80 md:mt-12 xl:w-full'/>
                 </div>
             )
         } else if(image === 'mark') {
             return (
                 <div className='flex justify-center items-center mt-8 md:mt-14'>
-                    <img src={mark} className='w-40 h-56 md:h-1/5 md:w-64 xl:w-full'/>
+                    <img src={mark} className='w-40 h-56 md:h-1/5 md:w-64 md:mt-16 xl:w-full'/>
                 </div>
             )
         } else if(image === 'victor') {
@@ -117,9 +119,9 @@ export default function Crew() {
                 {changeContent()}
             </div>
             )
-        } else if( width === breakPoint ) {
+        } else if(width >= breakPoint && width < med) {
             return (
-                <div style={{backgroundImage:`url(${tabletBackground})`,height:'844px'}} className='bg-cover'>
+                <div style={{backgroundImage:`url(${tabletBackground})`,height:'1100px'}} className='bg-cover'>
                 <Navbar />
                 <div className='text-white font-barlowCondensed font-thin text-center mt-9'>
                     <h3 className='flex justify-start gap-4 ml-5'><span className='opacity-20 font-bold'>02</span> MEET YOUR CREW</h3>

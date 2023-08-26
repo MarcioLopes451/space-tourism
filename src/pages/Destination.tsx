@@ -117,7 +117,7 @@ export default function Destination() {
               )
         } else if(width >= breakPoint && width < med) {
             return (
-                <div style={{backgroundImage:`url(${tabletBackground})`,height:'1000px'}} className='bg-cover'>
+                <div style={{backgroundImage:`url(${tabletBackground})`,height:'1100px'}} className='bg-cover'>
                     <Navbar />
                     <div className='text-white font-barlowCondensed font-thin text-center'>
                         <h3 className='flex justify-center gap-4 md:justify-start mt-10 ml-5'><span className='opacity-20 font-bold'>01</span> PICK YOUR DESTINATION</h3>

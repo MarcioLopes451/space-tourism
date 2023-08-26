@@ -97,6 +97,7 @@ export default function DestinationLayout({name,description,distance,travel}: De
 export function CrewLayout({name,role,bio}: Crew){
     const [width, setWidth] = useState(window.innerWidth);
     const breakPoint = 768;
+    const med = 1024;
 
     useEffect(() => {
         const handleResizeWindow = () => setWidth(window.innerWidth);
@@ -117,7 +118,7 @@ export function CrewLayout({name,role,bio}: Crew){
                     </div>
                 </div>
                 )
-        } else if( width === breakPoint) {
+        } else if( width >= breakPoint && width < med ) {
             return (
                 <div className="mt-7">
                     <div className="text-center">
@@ -168,7 +169,7 @@ export function TechnologyLayout({name,description}: Technology){
                     </div>
                 </div>
             )
-        } else if(width === breakPoint) {
+        } else if(width) {
             return (
                 <div className="mt-7">
                     <div className="text-center">
