@@ -1,5 +1,24 @@
 import Close from '../../assets/shared/icon-close.svg';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const slideRight = {
+    hidden: {
+        x:'100px',
+    },
+    visible:{
+        x:'0px',
+        transition:{
+            duration:0.5
+        }
+    },
+    exit:{
+        x:'100px',
+        transition:{
+            duration:0.5
+        }
+    }
+}
 
 type Nav = {
     isOpen: boolean
@@ -9,7 +28,11 @@ type Nav = {
 export default function MobileNav({onClose, isOpen}: Nav) {
 
   return isOpen ? (
-    <div className='absolute top-0 left-36 bg-transparent w-64 backdrop-blur-2xl z-50' style={{height:'844px'}}>
+    <motion.div className='absolute top-0 left-36 bg-transparent w-64 backdrop-blur-2xl z-50' style={{height:'844px'}} 
+    variants={slideRight}
+    initial='hidden'
+    animate='visible'
+    exit='exit'>
         <div>
             <img src={Close} className='absolute top-8 left-48' onClick={onClose}/>
            <div className='flex flex-col mt-36 gap-9'>
@@ -27,6 +50,6 @@ export default function MobileNav({onClose, isOpen}: Nav) {
             </Link>
            </div>
         </div>
-    </div>
+    </motion.div>
   ) : null
 }

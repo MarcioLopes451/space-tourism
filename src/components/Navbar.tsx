@@ -40,7 +40,7 @@ export default function Navbar() {
               <div className='flex justify-between items-center'>
                   <img src={Logo} className='ml-6'/>
                   <div className='flex gap-11 bg-transparent h-24 backdrop-blur-2xl items-center px-12 text-sm'>
-                  <Link to='/space-tourism/' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+                  <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
                 <span className='font-bold'>00</span> HOME
             </Link>
             <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
