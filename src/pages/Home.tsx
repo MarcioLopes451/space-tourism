@@ -72,7 +72,7 @@ export default function Home() {
                          initial='hidden'
                          animate='visible'
                         className='mt-20 text-center'>
-                            <Link to='#'>
+                            <Link to='/space-tourism/destination'>
                                 <button className='w-40 h-40 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>
                                     EXPLORE
                                 </button>
@@ -103,7 +103,7 @@ export default function Home() {
                         initial='hidden'
                         animate='visible' 
                         className='mt-20 text-center'>
-                            <Link to='#'>
+                            <Link to='/space-tourism/destination'>
                                 <button className='w-40 h-40 bg-white rounded-full font-bellefair text-xl font-thin tracking-widest'>
                                     EXPLORE
                                 </button>
@@ -132,7 +132,7 @@ export default function Home() {
                         variants={SlideRight}
                         initial='hidden'
                         animate='visible' className='mt-20 text-center'>
-                            <Link to='#'>
+                            <Link to='/space-tourism/destination'>
                                 <button className=' w-72 h-72 bg-white rounded-full font-bellefair text-3xl font-thin tracking-widest'>
                                     EXPLORE
                                 </button>
