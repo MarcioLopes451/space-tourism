@@ -10,6 +10,7 @@ export default function Navbar() {
     const [state, setState] = useState(false)
     const [width, setWidth] = useState(window.innerWidth);
     const breakPoint = 768;
+    const med = 1024;
 
     useEffect(() => {
         const handleResizeWindow = () => setWidth(window.innerWidth);
@@ -34,30 +35,31 @@ export default function Navbar() {
               <MobileNav isOpen={state} onClose={handleClick}/>
           </div>
         )
-      } else if( width === breakPoint) {
+      } else if( width >= breakPoint && width < med) {
         return (
           <div className='w-full'>
               <div className='flex justify-between items-center'>
                   <img src={Logo} className='ml-6'/>
                   <div className='flex gap-11 bg-transparent h-24 backdrop-blur-2xl items-center px-12 text-sm'>
-                  <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
-                <span className='font-bold'>00</span> HOME
+                  <Link to='/space-tourism'>
+                    <a className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3 hover:text-periwinkle duration-200 ease-in'>
+                    <span className='font-bold'>00</span> HOME
+                    </a>
             </Link>
-            <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+            <Link to='/space-tourism/destination' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3 hover:text-periwinkle duration-200 ease-in'>
                 <span className='font-bold'>01</span> DESTINATION
             </Link>
-            <Link to='/space-tourism/crew' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+            <Link to='/space-tourism/crew' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3 hover:text-periwinkle duration-200 ease-in'>
                 <span className='font-bold'>02</span> CREW
             </Link>
-            <Link to='/space-tourism/technology' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3'>
+            <Link to='/space-tourism/technology' className='text-white font-barlowCondensed font-thin tracking-wide flex gap-3 hover:text-periwinkle duration-200 ease-in'>
                 <span className='font-bold'>03</span> TECHNOLOGY
             </Link>
                  </div>
               </div>
-              <MobileNav isOpen={state} onClose={handleClick}/>
           </div>
         )
-      } else if(width > breakPoint) {
+      } else {
         return (
           <div className='w-full'>
               <div className='flex justify-between items-center'>
@@ -77,7 +79,6 @@ export default function Navbar() {
             </Link>
                  </div>
               </div>
-              <MobileNav isOpen={state} onClose={handleClick}/>
           </div>
         )
       }

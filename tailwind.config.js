@@ -3,9 +3,6 @@ export default {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      backgroundImage: {
-        'mobile': ''
-      }
     },
     colors: {
       'richBlack':'#0B0D17',
@@ -30,8 +27,9 @@ export default {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
-    }
+    },
   },
-  plugins: [],
+  plugins: [
+  ],
 }
 
