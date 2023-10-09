@@ -4,6 +4,7 @@ The Space Tourism is a website based on the context of space traviling including
 - Destination(Planets 🪐 )
 - Crew Members
 - Technology
+You can view the website [here](https://marciolopes451.github.io/space-tourism/)
 
 ## Tools used:
 - React(Vite + TypeScript)
